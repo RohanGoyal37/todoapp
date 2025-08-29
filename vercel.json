@@ -1,18 +1,15 @@
 {
   "builds": [
-    {
-      "src": "mylist/wsgi.py",
-      "use": "@vercel/python"
-    }
+    { "src": "manage.py", "use": "@vercel/python" }
   ],
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "/static/$1"
+      "dest": "/staticfiles/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "mylist/wsgi.py"
+      "dest": "manage.py"
     }
   ]
 }
